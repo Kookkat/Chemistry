@@ -1,0 +1,12 @@
+1. read user input
+2. split it into recognizable elements, and the quantity of each
+3. substitute all known elements with their atomic mass
+4. perform algebra.
+
+
+H2O
+
+H 2 O
+
+(1.008)2 +(16.00)
+... and so on

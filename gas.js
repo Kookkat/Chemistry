@@ -1,52 +1,30 @@
-//Simple pv=nrt equation
-//Pressure*Volume=# of Moles*constant*temp
-//usally in atm*L=mol*0.08206L*atm/(mol*k) or 0.08206 l atm mol^-1 K^-1
-//should be easy, just math, but also add conversions
-//ex mmHg--->atm
 const prompt = require("prompt-sync")();
 const r=0.08206;
-var volume;
-var pressure;
-var moles;
-var temp;
-var answer;
 
 var missing = prompt("What factor is missing?(ex. V, P, Mol, K)");
 if(missing == 'V'){
-    p();
-    mol();
-    t();
-    answer=(r*temp*moles)/pressure;
+    answer=(r*t()*mol())/p();
 }else{
     if(missing == 'P'){
-        v();
-        mol();
-        t();
-        answer=(r*temp*moles)/volume;
+        answer=(r*t()*mol())/v();
     }else{
         if(missing =='Mol'){
-            p();
-            v();
-            t();
-            answer=(pressure*volume)/(temp*r);
+            answer=(p()*v())/(t()*r);
         }else{
-            p();
-            v();
-            mol();
-            answer=(pressure*volume)/(moles*r);
+            answer=(p()*v())/(mol()*r);
         }
     }
 }
 console.log(answer);
 function v(){
-    volume=prompt("Whats the volume?");
+    return prompt("Whats the volume?");
 }
 function p(){
-    pressure=prompt("Whats the pressure?");
+    return prompt("Whats the pressure?");
 }
 function mol(){
-    moles=prompt("How many moles?");
+    return prompt("How many moles?");
 }
 function t(){
-    temp=prompt("Whats the temp?");
+    return prompt("Whats the temp?");
 }

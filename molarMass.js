@@ -5,6 +5,9 @@ var mass = [];
 var compound = prompt("Give me compound");
 var compoundSplit = compound.split(/([A-Z][a-z]{0,2})/).map(bit => bit.trim()).filter(Boolean);
 console.log(compoundSplit);
+if (compoundSplit[0].match(/[A-z]*/) && compoundSplit[1].match(/[A-z*]/)) {
+   compoundSplit.unshift("1");
+}
 for (let i = 0; compoundSplit.length - 1 >= i; i++) {
   if (compoundSplit[i].match(/([A-Z][a-z]{0,2})/)) {
     const matchedamu = periodic.find(

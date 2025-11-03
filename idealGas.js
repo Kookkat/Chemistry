@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 const r = 0.08206;
-const periodic = require("./Gas/periodic.json").elements;
+const periodic = require("./periodic.json").elements;
 let p, v, mol, t;
 
 let info = prompt("What information do you have?");
